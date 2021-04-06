@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: main-head('update ad')"></head>
+
+<body>
+
+<form th:action="${'/ads/'+ oldAd.id +'/update'}" method="post">
+
+	<h2>Create Ad Form</h2>
+
+	<br>
+
+	<label for="title">Title</label>
+	<input name="ad_title" id="title" type="text" th:value="${oldAd.title}">
+
+	<br>
+
+	<label for="description">Description</label>
+	<input name="ad_description" id="description" type="text" th:value="${oldAd.description}">
+
+	<br>
+
+	<input type="submit" value="update ad">
+
+</form>
+
+</body>
+</html>

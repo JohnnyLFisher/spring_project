@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/header :: main-head('All the Posts')"></head>
+<body>
+
+<nav th:replace="fragments/navbar :: mainNav"></nav>
+
+<div sec:authorize="isAuthenticated()">
+	<h2>Welcome</h2>
+	<h1 th:text="${#authentication.principal.username}"></h1>
+</div>
+
+<main class="container">
+	<div class="post" th:each="post : ${posts}">
+		<h1 th:text="${post.title}"></h1>
+		<p th:text="${post.body}"></p>
+	</div>
+</main>
+
+</body>
+</html>

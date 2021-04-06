@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: main-head('Post Show Page')"></head>
+<body>
+
+<nav th:replace="fragments/navbar :: mainNav"></nav>
+
+<main class="container">
+	<div class="post">
+		<h1 th:text="${post.title}"></h1>
+		<p th:text="${post.body}"></p>
+		<p>You can contact me at <a th:text="${post.owner.email}" th:href="${'mailto:' + post.owner.email}">here</a></p>
+	</div>
+</main>
+
+</body>
+</html>
